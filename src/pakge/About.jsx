@@ -26,7 +26,7 @@ const About = () => {
         <div className="card-body">
           <h2 className="card-title">
             Card Title
-            <div className="badge badge-secondary">NEW</div>
+            <div className="badge badge-secondary">{yearOfPublishing}</div>
           </h2>
           <p>{review}</p>
           <div className="card-actions justify-end">
