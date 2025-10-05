@@ -8,21 +8,30 @@ import Main from "./pakge/Main.jsx";
 import About from "./pakge/About.jsx";
 
 
+
+
 const router = createBrowserRouter([
   {
-    path:'/',
-    Component:Root,
-    children:[
+    path: "/",
+    loader: () => fetch("/promise.json"),
+    Component: Root,
+    children: [
       {
-        index:true,
-        Component:Main
-      },{
-        path:'/about',
-        Component:About
-      }
-    ]
-  }
-])
-createRoot(document.getElementById("root")).render(<StrictMode>
-<RouterProvider router={router}></RouterProvider>
-</StrictMode>);
+        index: true,
+        path:'/',
+        Component: Main,
+        loader: () => fetch("/promise.json"),
+      },
+     {
+      path:'/details/:id',
+      loader:()=>fetch("/promise.json"),
+      Component:About
+     }
+    ],
+  },
+]);
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <RouterProvider router={router}></RouterProvider>
+  </StrictMode>
+);
