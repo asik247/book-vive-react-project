@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "./pakge/Root.jsx";
 import Main from "./pakge/Main.jsx";
 import About from "./pakge/About.jsx";
+import ReadList from "./pakge/ReadList.jsx";
 
 
 
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
         Component: Main,
         loader: () => fetch("/promise.json"),
       },
+      {
+        path:'/readList',
+         loader: () => fetch("/promise.json"),
+        Component:ReadList
+      }
+      ,
      {
       path:'/details/:id',
       loader:()=>fetch("/promise.json"),

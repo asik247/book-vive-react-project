@@ -29,6 +29,9 @@ const Navbar = ({ RootData }) => {
             <li>
               <Link to="/">Home</Link>
             </li>
+            <li>
+              <Link to="/readList">ReadList</Link>
+            </li>
             {/* Dynamic Books */}
             {RootData &&
               RootData.map((book) => (
@@ -48,6 +51,9 @@ const Navbar = ({ RootData }) => {
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/readList">ReadList</Link>
           </li>
           {RootData &&
             RootData.map((book) => (
